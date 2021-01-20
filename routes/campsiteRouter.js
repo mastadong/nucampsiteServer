@@ -4,7 +4,6 @@ const authenticate = require('../authenticate');
 
 const campsiteRouter = express.Router();
 
-
 //GENERAL
 campsiteRouter.route('/')
 .get((req, res, next) => {

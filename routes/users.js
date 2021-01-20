@@ -13,7 +13,10 @@ router.get('/', authenticate.verifyUser, authenticate.verifyAdmin, function(req,
 //CREATE NEW USER
 router.post('/signup', (req, res) => {
     User.register(
-        new User({username: req.body.username}),
+        new User({
+            username: req.body.username,
+            admin: req.body.admin
+        }),
         req.body.password,
         (err, user) => {
             if (err) {
